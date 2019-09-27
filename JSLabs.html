@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Your Name Here" />
+    <meta name="keywords" content="JavaScript Playground, JS, Introduction to JavaScript, JavaScript Fundamentals" />
+    <meta name="description" content="A demo site to learn JavaScript at Centriq Training.  Includes information about JavaScript, jQuery, and jQuery Plugins" />
+    <title>JavaScript Into | JavaScript Playground</title>
+
+    <!-- Bootstrap Theme -->
+    <link href="css/bootstrap-flatly-theme.min.css" rel="stylesheet" />
+
+    <!--Custom CSS-->
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!--Favicon-->
+    <link href="favicon.ico" rel="icon" type="image/x-icon" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+    <!--Collapsible nav-->
+    <nav class="navbar-default navbar-fixed-top">
+        <a href="index.html" class="navbar-brand">JavaScript Playground</a>
+        <!--Hamburger Button-->
+        <a href="javascript: void(0)" class="pull-right" onclick="toggleNav()" id="menu-btn">
+            &#9776;
+        </a>
+        <!--Above we applied javascript:void(0) to keep the page from refreshing but also keeping the user on the same page.
+
+        &#9776: gives you the hamburger menu button-->
+
+
+        <ul class="topnav" id="nav-list">
+            <li>
+                <a href="index.html">
+                    <span class="glyphicon glyphicon-home"></span> Home
+                </a>
+            </li>
+            <li class="active">
+                <a href="jsintro.html">
+                    JavaScript
+                </a>
+            </li>
+            <li>
+                <a href="jqueryintro.html">
+                    jQuery
+                </a>
+            </li>
+            <li>
+                <a href="jqueryplugins.html">
+                    jQuery Plugins
+                </a>
+            </li>
+            <!--Navbar Dropdown-->
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle"
+                   role="button" data-toggle="dropdown" target="_blank"
+                   aria-haspopup="true" aria-expanded="false">
+                    Labs<span class="caret"></span>
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li>
+                        <a href="jslabs.html">
+                            JavaScript
+                        </a>
+                    </li>
+                    <li>
+                        <a href="jquerylabs.html">
+                            jQuery
+                        </a>
+                    </li>
+                </ul>
+
+            </li>
+            <!--/Navbar dropdown-->
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+        </ul>
+    </nav><!--/#navbar-->
+    <!--/Main Nav-->
+    <!--Page Header-->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>JavaScript Playground</h1>
+        </div>
+    </div>
+    <!--/Page Header-->
+    <!--Main Content-->
+    <main class="container">
+        <div class="row">
+            <!--Multiples-->
+            <article class="col-md-4">
+                <h2>Multiples</h2>
+                <p>
+                    Using a loop display all the multiples of 7 from 1-30 (Ex: 7, 14, 21, etc).
+                </p>
+                <span id="loop-to-thirty"></span>
+            </article>
+            <!--Mad Lib-->
+            <article class="col-md-4">
+                <h2>Mad Lib</h2>
+                <p>
+                    Accept the following inputs from a user and on submit insert them into the appropriate place in the story text and display
+                    the content to the user.
+                </p>
+                <div>
+                    <input type="text" class="form-control" id="tbForeignCountry" placeholder="Foreign Country" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="tbAdjective" placeholder="Adjective" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="tbAnimal" placeholder="Animal" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="tbVerb" placeholder="Verb" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="tbPlace" placeholder="Place" />
+                </div>
+                <div>
+                    <input type="text" class="form-control" id="tbTypeOfLiquid" placeholder="Type of Liquid" />
+                </div>
+
+                <div>
+                    <input type="button" class="btn btn-launch" value="Launch" onclick="displayMadLib()" />
+                </div>
+
+                <span id="madlib-message"></span>
+            </article>
+            <!--Celsius Convertor-->
+            <article class="col-md-4">
+                <h2>Celsius Converter</h2>
+                <p>
+                    Allow a user to enter a Celsius temperature. On submit convert the temperature to Fahrenheit using the following
+                    formula to display the result.
+                </p>
+                <!--textbox for input-->
+                <div>
+                    <input type="number" class="form-control" id="tbTemperature" placeholder="Celsius to Fahrenheit" />
+                </div>
+                <!--Button to call the function-->
+                <div>
+                    <input type="button" class="btn btn-danger" value="Convert Temp" onclick="calcFahrenheit()" />
+                </div>
+                <!--Output element-->
+                <div id="degree-result"></div>
+            </article>
+            <!--Area Calculator (Square)-->
+            <article class="col-md-4">
+                <h2>Area Calculator (Square)</h2>
+                <p>
+                    Create calculators to figure out the area of the following shapes using the related formulas.
+                    Square = height * width
+                    Triangle = (height*width)/2
+                    Circle = 3.14 * radius * radius
+                </p>
+                <!--Textbox for user input-->
+                <div>
+                    <input type="number" class="form-control" id="tbSquareHeight" placeholder="Height" />
+                </div>
+                <div>
+                    <input type="number" class="form-control" id="tbSquareWidth" placeholder="Width" />
+                </div>
+                <!--Button to call function-->
+                <div>
+                    <input type="button" class="btn btn-danger" id="btnSquare" value="Figure Area" onclick="calcSquare()" />
+                </div>
+                <!--Output-->
+                <div id="calculating-square"></div>
+            </article>
+            <!--Area Calculator (Triangle)-->
+            <article class="col-md-4">
+                <h2>Area Calculator (Triangle)</h2>
+                <p>
+                    Create calculators to figure out the area of the following shapes using the related formulas.
+                    Square = height * width
+                    Triangle = (height*width)/2
+                    Circle = 3.14 * radius * radius
+                </p>
+                <div>
+                    <input type="number" class="form-control" id="tbTriangleHeight" placeholder="Height" />
+                </div>
+                <div>
+                    <input type="number" class="form-control" id="tbTriangleWidth" placeholder="Width" />
+                </div>
+                <div>
+                    <input type="button" class="btn btn-danger" id="btnTriangle" value="Figure Area" onclick="calcTriangle()" />
+                </div>
+                <div id="calculating-triangle"></div>
+            </article>
+            <!--Area Calculator (Circle)-->
+            <article class="col-md-4">
+                <h2>Area Calculator (Circle)</h2>
+                <p>
+                    Create calculators to figure out the area of the following shapes using the related formulas.
+                    Square = height * width
+                    Triangle = (height*width)/2
+                    Circle = 3.14 * radius * radius
+                </p>
+                <div>
+                    <input type="number" class="form-control" id="tbCircleRadius" placeholder="Radius" />
+                </div>
+                <div>
+                    <input type="button" class="btn btn-danger" id="btnCircle" value="Figure Area" onclick="calcCircle()" />
+                </div>
+                <div id="calculating-circle"></div>
+            </article>
+            <!--Ring Area Calculator-->
+            <article class="col-md-4">
+                <h2>Ring Area Calculator</h2>
+                <p>
+                    Allow a user to enter the outer radius and the inner radius of a ring. Use those radii to calculate and display the area of
+                    the ring using the formulas below.
+                    Area of a circle = 3.14 * radius * radius
+                    Area of a ring = Area of outer circle – area of inner circle
+                    OR
+                    Area of a ring = 3.14(r12
+                    -r22
+                    )
+                </p>
+                <div>
+                    <input type="number" class="form-control" id="tbCircleInnerRadi" placeholder="Radius1" />
+                </div>
+                <div>
+                    <input type="number" class="form-control" id="tbCircleOuterRadi" placeholder="Radius2" />
+                </div>
+                <div>
+                    <input type="button" class="btn btn-danger" id="btnCircle" value="Figure Area" onclick="calcCircleRadii()" />
+                </div>
+                <div id="calculating-circleRadii"></div>
+            </article>
+            <!--Change Lab-->
+            <article class="col-md-4">
+
+                <h2>Change Lab</h2>
+                <p>
+                    Allow a user to tell you an amount of money they have and then tell them how much that would be in quarters, dimes,
+                    nickels and pennies. NOTE: Google the Math.floor() and Math.round() methods for help in completing this lab.
+                    <br/>
+                    Enter the amount of money you have to get your exact change back.
+                </p>
+                <div>
+                    <input type="number" class="form-control" id="tbChange" placeholder="Change" />
+                </div>
+                <div>
+                    <input type="button" class="btn btn-launch" value="Launch" onclick="displayChange()" />
+                </div>
+                <span id="calculating-changeAmount"></span>
+            </article>
+            <!--Advanced Calculator-->
+            <article class="col-md-4">
+                <h2> Advanced Calculator</h2>
+                <div>
+                    <input type="number" class="form-control" id="tbFirstNumber" placeholder="First Number" />
+                </div>
+                <div>
+                    <input type="number" class="form-control" id="tbSecondNumber" placeholder="Second Number" />
+                </div>
+                <div>
+                    <input type="button" class="btn btn-group-sm" value="add" id="btnAdd" onclick="addNumbers" />
+                    
+                    <input type="button" class="btn btn-group-sm" value="subtract" id="btnSubtract" onclick="subtractNumbers" />
+
+                    <input type="button" class="btn btn-group-sm" value="multiplication" id="btnMultiplication" onclick="multiplyNumbers" />
+
+                    <input type="button" class="btn btn-group-sm" value="division" id="btnDivision" onclick="divideNumbers" />
+                </div>
+                <span id="calculating-answer"></span>
+            </article>
+        </div>
+    </main>
+    <!--/Main Content-->
+    <!--Footer-->
+    <nav class="navbar navbar-default navbar-fixed-bottom">
+        <div class="container">
+            <p class="navbar-text pull-left">
+                &copy; <span id="copyright"></span> - Kaeleigh Warrick-Hansen
+            </p>
+            <a href="#" class="btn navbar-btn btn-danger pull-right">
+                Go to the top!
+            </a>
+        </div>
+    </nav>
+    <!--/Footer-->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Bootstrap 3.3.7 minified JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!--Main JS-->
+    <script src="js/labcode.js"></script>
+    <!--Toggle Hamburger Menu-->
+    <script>
+        //We are now in JS mode, within the script tags
+        function toggleNav() {
+            let navList = document.getElementById('nav-list');
+            navList.classList.toggle('expanded');
+
+            //Toggle Hamburger Menu/Close button
+            let btnMenu = document.getElementById('menu-btn');
+            if (navList.classList.contains('expanded')) {
+                btnMenu.innerHTML = "&times;";
+            }
+            else {
+                btnMenu.innerHTML = "&#9776;";
+            }
+        }
+    </script>
+</body>
+</html>
